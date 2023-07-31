@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +31,8 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+//rutas microsoft
+Route::get('/callback',[LoginController::class, 'callback']);
+Route::get('/logeo', [LoginController::class, 'logeo'])->name("logeo");
