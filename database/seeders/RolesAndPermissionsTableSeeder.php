@@ -12,7 +12,7 @@ class RolesAndPermissionsTableSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run()//: void
     {
         //reset cached roles and permission
         app()['cache']-> forget('maklad.permission.cache');
