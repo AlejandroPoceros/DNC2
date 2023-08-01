@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\User;
 
 class UsuariosTableSeeder extends Seeder
 {
@@ -17,6 +18,7 @@ class UsuariosTableSeeder extends Seeder
         $usuario= User::create([
         'name'=>'admin'
         ,'email'=>'admin@gmail.com'
+        ,'password'=>'1234456768'
         ,'email_verified_at'=>null
         ,'remember_token'=>null
         ,'created_at'=>$ahora
