@@ -36,3 +36,8 @@ require __DIR__.'/auth.php';
 //rutas microsoft
 Route::get('/callback',[LoginController::class, 'callback']);
 Route::get('/logeo', [LoginController::class, 'logeo'])->name("logeo");
+
+
+Route::group(['middleware'=>['auth','verified','checa']],function(){
+    //Route::resource('logeo11', App\Http\Controllers\LoginController::class);
+});
