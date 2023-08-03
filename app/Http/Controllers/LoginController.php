@@ -15,6 +15,9 @@ class LoginController extends Controller
 
 public function callback (){
     dd('accediste');
+   //return redirect()->route('dashboard');
+  // return view('dashboard');
+
 }
 
 }
