@@ -13,20 +13,21 @@ return new class extends Migration
     {
         Schema::create('cursos', function (Blueprint $table) {
             $table->id('CursoId');
+            $table->String('CursoSiglas');
+            $table->String('CursoNombre');
             $table->date('CursoVigenciaIni');
             $table->date('CursoVigenciaFin');
-            $table->string('CursoNombre');
-            $table->string('CursoDescrip');
-            $table->string('ClasifAccionId');
-            $table->string('TpCursoId');
-            $table->string('TpEnfoqueId');
-            //verificar este dato
+            $table->String('CursoDescr');
             $table->enum('CursoSeleccionado',['si','no']);
-            $table->string('CursoComent');
-            $table->date('CursoFecUltAct');
-            $table->string('CursoTemario');
-            $table->string('CursoObjetivo');
+            $table->String('CursoComentario');
+            $table->String('CursoObjetivo');
+            $table->String('ClasifAcionId');
+            $table->String('TipoCursoId');
+            $table->String('TipoEnfoqueId');
+            $table->String('CursoTemario');
             $table->timestamps();
+
+    
         });
     }
 

@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tipo_cursos', function (Blueprint $table) {
-            $table->id('ClasifAccionFecUltAct');
-            $table->string('TpCursoNombre');
-            $table->string('TpCursoDescrip');
-            $table->string('TpCursoComent');
-            $table->date('TpCursoFecUltAct');
+        Schema::create('ClasifAccion', function (Blueprint $table) {
+            $table->id('ClasifAccionId');
+            $table->String('ClasifAccionSiglas');
+            $table->String('ClasifAccionNombre');
+            $table->String('ClasifAccionDescrip');
+            $table->String('ClasifAccionComent');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tipo_cursos');
+        Schema::dropIfExists('_clasif_accion');
     }
 };

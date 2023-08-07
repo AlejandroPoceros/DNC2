@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Clasif_Acciones', function (Blueprint $table) {
-            $table->id('ClasifAccionId');
-            $table->string('ClasifAccionNombre');
-            $table->string('ClasifAccionDescrip');
-            $table->string('ClasifAccionComent');
-            $table->date('ClasifAccionFecUltAct');
+        Schema::create('TipoEnfoqueCurso', function (Blueprint $table) {
+            $table->id('TpEnfoqueId');
+            $table->String('TpEnfoqueCursoSiglas');
+            $table->String('TpEnfoqueNombre');
+            $table->String('TpEnfoqueComen');
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Clasif_Acciones');
+        Schema::dropIfExists('_tipo_enfoque_curso');
     }
 };
