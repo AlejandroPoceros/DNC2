@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\ClasificacionAccionController;
+use App\Http\Controllers\CursoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TipoEnfoqueCursoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+
 
 
 /*
@@ -29,6 +31,9 @@ Route::get('/dashboard', function () {
 ///////
 Route::resource('ClasifAccion', ClasificacionAccionController::class);
 Route::resource('TipoEnfoqueCurso', TipoEnfoqueCursoController::class);
+Route::resource('Cursos', CursoController::class);
+
+
 
 
 Route::middleware('auth')->group(function () {
@@ -48,3 +53,10 @@ Route::get('/logeo', [LoginController::class, 'logeo'])->name("logeo");
 Route::group(['middleware'=>['auth','verified','checa']],function(){
     //Route::resource('logeo11', App\Http\Controllers\LoginController::class);
 });
+
+
+//rutas cursos
+
+//Route::get('Cursos', [CursoControllerController::class, 'index'])->name('Cursos.index');
+
+
