@@ -18,6 +18,7 @@
                     <table class="border">
                         <thead>
                         <tr class="border">
+                            <td class="border px-4 py-2">curso id</td>
                             <td class="border px-4 py-2">clave del curso</td>
                             <td class="border px-4 py-2">fecha de inicio</td>
                             <td class="border px-4 py-2">fecha de fin</td>
@@ -32,6 +33,7 @@
                             <tbody>
                             @foreach ($cursos as $curso)
                                  <tr>
+                                    <td  class="border px-4 py-2">{{$curso->CursoId}}</td>
                                     <td  class="border px-4 py-2">{{$curso->CursoSiglas}}</td>
                                     <td  class="border px-4 py-2">{{$curso->CursoVigenciaIni}}</td>
                                     <td  class="border px-4 py-2">{{$curso->CursoVigenciaFin}}</td>
@@ -41,9 +43,13 @@
                                     <td  class="border px-4 py-2">{{$curso->TipoCursoId}}</td>
                                     <td  class="border px-4 py-2">{{$curso->CursoObjetivo}}</td>
                                     <td class="border px-4 py-2 flex space-x-2">
-                                        <button dir="rlt" class="flex-1 rounded-full bg-blue-500 text-white px-4 py-2">Editar</button>
-                                        <button dir="rlt" class="flex-1 rounded-full bg-red-500 text-white px-4 py-2">Eliminar</button>
-                                    </td>
+                                        <a href="{{ route('Cursos.edit', [$curso->CursoId]) }}" dir="rlt" class="flex-1">
+                                            <button class="w-full rounded-full bg-blue-500 text-white px-4 py-2">Editar</button>
+                                        </a>
+                                        <a href="{{ route('Cursos.destroy', [$curso->CursoId]) }}" dir="rlt" class="flex-1">
+                                            <button class="w-full rounded-full bg-red-500 text-white px-4 py-2">Eliminar</button>
+                                        </a>
+                                              </td>
                                  </tr>
                             @endforeach
                      

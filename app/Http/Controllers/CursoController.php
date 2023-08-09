@@ -21,7 +21,7 @@ class CursoController extends Controller
      */
     public function create()
     {
-        //
+        ///
     }
 
     /**
@@ -43,9 +43,11 @@ class CursoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(curso $curso)
+    public function edit($id)
     {
-        //
+       
+        $cursos = curso::findOrFail($id);
+        return view('cursos.editar',compact('cursos'));
     }
 
     /**
@@ -61,6 +63,6 @@ class CursoController extends Controller
      */
     public function destroy(curso $curso)
     {
-        //
+        echo('elimina');
     }
 }
