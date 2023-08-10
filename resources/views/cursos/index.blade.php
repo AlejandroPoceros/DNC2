@@ -27,7 +27,11 @@
                             <td class="border px-4 py-2">clave del enfoque</td>
                             <td class="border px-4 py-2">clave del tipo de curso</td>
                             <td class="border px-4 py-2">objetivo</td>
-                            <td class="border px-4 py-2"></td>
+                            <td class="border px-4 py-2">
+                                <a href="{{ route('Cursos.create') }}" dir="rlt" class="flex-1">
+                                    <button class="w-full rounded-full bg-green-500 text-white px-4 py-2">Crear</button>
+                                </a>
+                            </td>
                         </tr>
                         <thead>
                             <tbody>

@@ -21,7 +21,8 @@ class CursoController extends Controller
      */
     public function create()
     {
-        ///
+        $cursos = curso::all();
+        return view('cursos.crear');
     }
 
     /**
@@ -29,7 +30,29 @@ class CursoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cursos = new curso();
+       
+       
+       
+
+       $cursos->CursoSiglas = $request->input('CursoSiglas');
+        $cursos->CursoVigenciaIni = $request->input('CursoVigenciaIni');
+        $cursos->CursoVigenciaFin = $request->input('CursoVigenciaFin');
+        $cursos->CursoNombre = $request->input('CursoNombre');
+        $cursos->CursoDescr = $request->input('CursoDescr');
+        $cursos->TipoEnfoqueId = $request->input('TipoEnfoqueId');
+        $cursos->TipoCursoId = $request->input('TipoCursoId');
+        $cursos->ClasifAcionId = $request->input('ClasifAcionId');
+        $cursos->CursoObjetivo = $request->input('CursoObjetivo');
+        $cursos->CursoTemario = $request->input('CursoTemario');
+        $cursos->CursoComentario = $request->input('CursoComentario');
+
+        if ($cursos->save()) {
+            return redirect()->route('Cursos.index')->with('success', '¡campo editado correctamente!');
+        } else {
+            return redirect()->route('#')->with('error', 'Error al crear la partida presupuestal.');
+        }
+
     }
 
     /**
@@ -53,16 +76,41 @@ class CursoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, curso $curso)
+    public function update(Request $request, $id)
     {
-        //
+
+        $cursos = curso::findOrFail($id);
+       
+       
+       
+
+       $cursos->CursoSiglas = $request->input('CursoSiglas');
+        $cursos->CursoVigenciaIni = $request->input('CursoVigenciaIni');
+        $cursos->CursoVigenciaFin = $request->input('CursoVigenciaFin');
+        $cursos->CursoNombre = $request->input('CursoNombre');
+        $cursos->CursoDescr = $request->input('CursoDescr');
+        $cursos->TipoEnfoqueId = $request->input('TipoEnfoqueId');
+        $cursos->TipoCursoId = $request->input('TipoCursoId');
+        $cursos->ClasifAcionId = $request->input('ClasifAcionId');
+        $cursos->CursoObjetivo = $request->input('CursoObjetivo');
+        $cursos->CursoTemario = $request->input('CursoTemario');
+        $cursos->CursoComentario = $request->input('CursoComentario');
+
+        if ($cursos->save()) {
+            return redirect()->route('Cursos.index')->with('success', '¡campo editado correctamente!');
+        } else {
+            return redirect()->route('#')->with('error', 'Error al crear la partida presupuestal.');
+        }
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(curso $curso)
+    public function destroy(String $CursoId)
     {
-        echo('elimina');
+        $cursos = curso::findOrFail($CursoId);
+        $cursos->delete();
+        return redirect()->route('Cursos.index');
     }
 }
