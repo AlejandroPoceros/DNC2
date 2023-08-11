@@ -2,10 +2,13 @@
 
 use App\Http\Controllers\ClasificacionAccionController;
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TipoCursoController;
 use App\Http\Controllers\TipoEnfoqueCursoController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
+
+
 
 
 
@@ -32,6 +35,7 @@ Route::get('/dashboard', function () {
 Route::resource('ClasifAccion', ClasificacionAccionController::class);
 Route::resource('TipoEnfoqueCurso', TipoEnfoqueCursoController::class);
 Route::resource('Cursos', CursoController::class);
+Route::resource('TipoCurso',TipoCursoController::class);
 
 
 

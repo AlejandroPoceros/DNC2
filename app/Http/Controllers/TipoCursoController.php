@@ -12,7 +12,8 @@ class TipoCursoController extends Controller
      */
     public function index()
     {
-        //
+        $tpcursos=TipoCurso::get();
+        return view('tipo_curso.index',compact('tpcursos'));
     }
 
     /**
@@ -20,7 +21,10 @@ class TipoCursoController extends Controller
      */
     public function create()
     {
-        //
+        
+       
+        return view('tipo_curso.crear');
+    
     }
 
     /**
@@ -28,7 +32,21 @@ class TipoCursoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tpcurso = new TipoCurso();
+
+
+        $tpcurso->TpCursoSiglas = $request->input('TpCursoSiglas');
+        $tpcurso->TpCursoNombre = $request->input('TpCursoNombre');
+        $tpcurso->TpCursoDesc = $request->input('TpCursoDesc');
+        $tpcurso->TpCursoComen = $request->input('TpCursoComen');
+        
+ 
+         if ($tpcurso->save()) {
+             return redirect()->route('TipoCurso.index')->with('success', '¡campo editado correctamente!');
+         } else {
+             return redirect()->route('#')->with('error', 'Error al crear la partida presupuestal.');
+         }
+ 
     }
 
     /**
@@ -42,24 +60,43 @@ class TipoCursoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(TipoCurso $tipoCurso)
+    public function edit(string $id)
     {
-        //
+        $tpcurso = TipoCurso::findOrFail($id);
+        return view('tipo_curso.editar',compact('tpcurso'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, TipoCurso $tipoCurso)
+    public function update(Request $request,  $id)
     {
-        //
+        $tpcurso = TipoCurso::findOrFail($id);
+       
+       
+       
+
+        $tpcurso->TpCursoSiglas = $request->input('TpCursoSiglas');
+        $tpcurso->TpCursoNombre = $request->input('TpCursoNombre');
+        $tpcurso->TpCursoDesc = $request->input('TpCursoDesc');
+        $tpcurso->TpCursoComen = $request->input('TpCursoComen');
+        
+ 
+         if ($tpcurso->save()) {
+             return redirect()->route('TipoCurso.index')->with('success', '¡campo editado correctamente!');
+         } else {
+             return redirect()->route('#')->with('error', 'Error al crear la partida presupuestal.');
+         }
+ 
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TipoCurso $tipoCurso)
+    public function destroy(String $TpCursoId)
     {
-        //
+        $tpcurso = TipoCurso::findOrFail($TpCursoId);
+        $tpcurso->delete();
+        return redirect()->route('TipoCurso.index');
     }
 }

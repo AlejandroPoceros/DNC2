@@ -55,8 +55,8 @@
               <x-slot name="content">
             <!-- Custom Section 1 -->
             <x-dropdown-link :href="route('Cursos.index')">{{ __('Cursos') }}</x-dropdown-link>
-            <x-dropdown-link :href="route('Cursos.index')">{{ __('Clasificación de acción') }}</x-dropdown-link>
-            <x-dropdown-link :href="route('Cursos.index')">{{ __('Tipo de curso') }}</x-dropdown-link>
+            <x-dropdown-link :href="route('ClasifAccion.index')">{{ __('Clasificación de acción') }}</x-dropdown-link>
+            <x-dropdown-link :href="route('TipoCurso.index')">{{ __('Tipo de curso') }}</x-dropdown-link>
             <x-dropdown-link :href="route('Cursos.index')">{{ __('Tipo de enfoque del curso') }}</x-dropdown-link>
             
 

@@ -16,7 +16,8 @@ class TipoCurso extends Model
     protected $fillable =[
         'TpCursoNombre',
         'TpCursoDesc',
-        'TpCursoComen'
+        'TpCursoComen',
+        'TpCursoSiglas',
 
     ];
 }

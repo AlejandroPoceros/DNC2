@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Cursos') }}
+            {{ __('Clasificacion de Acción') }}
         </br>
              
         </h2>
@@ -18,40 +18,35 @@
                     <table class="border">
                         <thead>
                         <tr class="border">
-                            <td class="border px-4 py-2">curso id</td>
-                            <td class="border px-4 py-2">clave del curso</td>
-                            <td class="border px-4 py-2">fecha de inicio</td>
-                            <td class="border px-4 py-2">fecha de fin</td>
-                            <td class="border px-4 py-2">nombre del curso</td>
+                            <td class="border px-4 py-2">clasificación id</td>
+                            <td class="border px-4 py-2">clave clasificacion</td>
+                            <td class="border px-4 py-2">nombre de la acción</td>
                             <td class="border px-4 py-2">descripción</td>
-                            <td class="border px-4 py-2">clave del enfoque</td>
-                            <td class="border px-4 py-2">clave del tipo de curso</td>
-                            <td class="border px-4 py-2">objetivo</td>
+                            <td class="border px-4 py-2">comentario</td>
+                            <td class="border px-4 py-2">fecha de creacion</td>
                             <td class="border px-4 py-2">
-                                <a href="{{ route('Cursos.create') }}" dir="rlt" class="flex-1">
+                                <a href="{{ route('ClasifAccion.create') }}" dir="rlt" class="flex-1">
                                     <button class="w-full rounded-full bg-green-500 text-white px-4 py-2">Crear</button>
                                 </a>
                             </td>
                         </tr>
                         <thead>
                             <tbody>
-                            @foreach ($cursos as $curso)
+                            @foreach ($Clasificacion as $clasificacion)
                                  <tr>
-                                    <td  class="border px-4 py-2">{{$curso->CursoId}}</td>
-                                    <td  class="border px-4 py-2">{{$curso->CursoSiglas}}</td>
-                                    <td  class="border px-4 py-2">{{$curso->CursoVigenciaIni}}</td>
-                                    <td  class="border px-4 py-2">{{$curso->CursoVigenciaFin}}</td>
-                                    <td  class="border px-4 py-2">{{$curso->CursoNombre}}</td>
-                                    <td  class="border px-4 py-2">{{$curso->CursoDescr}}</td>
-                                    <td  class="border px-4 py-2">{{$curso->TipoEnfoqueId}}</td>
-                                    <td  class="border px-4 py-2">{{$curso->TipoCursoId}}</td>
-                                    <td  class="border px-4 py-2">{{$curso->CursoObjetivo}}</td>
+                                    <td  class="border px-4 py-2">{{$clasificacion->ClasifAccionId}}</td>
+                                    <td  class="border px-4 py-2">{{$clasificacion->ClasifAccionSiglas}}</td>
+                                    <td  class="border px-4 py-2">{{$clasificacion->ClasifAccionNombre}}</td>
+                                    <td  class="border px-4 py-2">{{$clasificacion->ClasifAccionDescrip}}</td>
+                                    <td  class="border px-4 py-2">{{$clasificacion->ClasifAccionComent}}</td>
+                                    <td  class="border px-4 py-2">{{$clasificacion->created_at}}</td>
+                                   
                                     <td class="border px-4 py-2 flex space-x-2">
-                                        <a href="{{ route('Cursos.edit', [$curso->CursoId]) }}" dir="rlt" class="flex-1">
+                                        <a href="{{ route('ClasifAccion.edit', [$clasificacion->ClasifAccionId]) }}" dir="rlt" class="flex-1">
                                             <button class="w-full rounded-full bg-blue-500 text-white px-4 py-2">Editar</button>
                                         </a>
 
-                                        <form action="{{route('Cursos.destroy', [$curso->CursoId])}}" method="POST" class="w-full max-w-sm">
+                                        <form action="{{route('ClasifAccion.destroy', [$clasificacion->ClasifAccionId])}}" method="POST" class="w-full max-w-sm">
                                             @csrf
                                             @method("DELETE")
                                           {{-- <a href="{{ route('Cursos.destroy', [$curso->CursoId]) }}" dir="rlt" class="flex-1"> --}}
