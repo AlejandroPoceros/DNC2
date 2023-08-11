@@ -99,4 +99,4 @@ class TipoCursoController extends Controller
         $tpcurso->delete();
         return redirect()->route('TipoCurso.index');
     }
-}
+}         
