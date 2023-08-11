@@ -50,9 +50,15 @@
                                         <a href="{{ route('Cursos.edit', [$curso->CursoId]) }}" dir="rlt" class="flex-1">
                                             <button class="w-full rounded-full bg-blue-500 text-white px-4 py-2">Editar</button>
                                         </a>
-                                        <a href="{{ route('Cursos.destroy', [$curso->CursoId]) }}" dir="rlt" class="flex-1">
+
+                                        <form action="{{route('Cursos.destroy', [$curso->CursoId])}}" method="POST" class="w-full max-w-sm">
+                                            @csrf
+                                            @method("DELETE")
+                                          {{-- <a href="{{ route('Cursos.destroy', [$curso->CursoId]) }}" dir="rlt" class="flex-1"> --}}
                                             <button class="w-full rounded-full bg-red-500 text-white px-4 py-2">Eliminar</button>
-                                        </a>
+                                        {{-- </a>    --}}
+                                        </form>
+                                       
                                               </td>
                                  </tr>
                             @endforeach
