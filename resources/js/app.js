@@ -8,3 +8,6 @@ Alpine.start();
 
 /* resources/js/app.js */
 require('./bootstrap');
+
+
+////////////
