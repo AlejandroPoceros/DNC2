@@ -43,9 +43,6 @@ class CursoController extends Controller
        
        
 
-       $cursos->CursoSiglas = $request->input('CursoSiglas');
-        $cursos->CursoVigenciaIni = $request->input('CursoVigenciaIni');
-        $cursos->CursoVigenciaFin = $request->input('CursoVigenciaFin');
         $cursos->CursoNombre = $request->input('CursoNombre');
         $cursos->CursoDescr = $request->input('CursoDescr');
         $cursos->TipoEnfoqueId = $request->input('tipoenfoque');
@@ -92,9 +89,7 @@ class CursoController extends Controller
        
        
 
-       $cursos->CursoSiglas = $request->input('CursoSiglas');
-        $cursos->CursoVigenciaIni = $request->input('CursoVigenciaIni');
-        $cursos->CursoVigenciaFin = $request->input('CursoVigenciaFin');
+     
         $cursos->CursoNombre = $request->input('CursoNombre');
         $cursos->CursoDescr = $request->input('CursoDescr');
         $cursos->TipoEnfoqueId = $request->input('TipoEnfoqueId');
