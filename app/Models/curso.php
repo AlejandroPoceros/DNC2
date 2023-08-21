@@ -12,10 +12,7 @@ class curso extends Model
     protected $primaryKey='CursoId';
     public $incrementing =true;
     protected $fillable =[
-        'CursoSiglas',
         'CursoNombre',
-        'CursoVigenciaIni',
-        'CursoVigenciaFin',
         'CursoDescr',
         'TipoEnfoqueId',
         'TipoCursoId',

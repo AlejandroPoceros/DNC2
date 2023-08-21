@@ -5,8 +5,10 @@
         </br>
              
         </h2>
-        <a style="border-block-color: black" href="{{ route('dashboard') }}" class="btn btn-primary">Regresar</a>
-    </x-slot>
+        <a style="border-block-color: black" href="{{ route('dashboard') }}" class="btn btn-primary">
+            <button class="  rounded-full bg-gray-500 text-white px-4 py-2">Regresar</button>
+            </a>
+            </x-slot>
     
 
     <div class="py-12" >
@@ -18,12 +20,11 @@
                     <table class="border">
                         <thead>
                         <tr class="border">
-                            <td class="border px-4 py-2">ID del Tipo de curso </td>
-                            <td class="border px-4 py-2">clave de Tipo de Cursso</td>
                             <td class="border px-4 py-2">Nombre del curso</td>
                             <td class="border px-4 py-2">Descripción</td>
                             <td class="border px-4 py-2">Comentarios</td>
-                            <td class="border px-4 py-2">fecha de creacion</td>
+                            <td class="border px-4 py-2">Fecha de creación</td>
+                            <td class="border px-4 py-2">Ultima actualización</td>
                             <td class="border px-4 py-2">
                                 <a href="{{ route('TipoCurso.create') }}" dir="rlt" class="flex-1">
                                     <button class="w-full rounded-full bg-green-500 text-white px-4 py-2">Crear</button>
@@ -34,12 +35,11 @@
                             <tbody>
                             @foreach ($tpcursos as $tpcurso)
                                  <tr>
-                                    <td  class="border px-4 py-2">{{$tpcurso->TpCursoId}}</td>
-                                    <td  class="border px-4 py-2">{{$tpcurso->TpCursoSiglas}}</td>
                                     <td  class="border px-4 py-2">{{$tpcurso->TpCursoNombre}}</td>
                                     <td  class="border px-4 py-2">{{$tpcurso->TpCursoDesc}}</td>
-                                    <td  class="border px-4 py-2">{{$tpcurso->TpCursoComenc}}</td>
+                                    <td  class="border px-4 py-2">{{$tpcurso->TpCursoComen}}</td>
                                     <td  class="border px-4 py-2">{{$tpcurso->created_at}}</td>
+                                    <td  class="border px-4 py-2">{{$tpcurso->updated_at}}</td>
                                    
                                     <td class="border px-4 py-2 flex space-x-2">
                                         <a href="{{ route('TipoCurso.edit', [$tpcurso->TpCursoId]) }}" dir="rlt" class="flex-1">

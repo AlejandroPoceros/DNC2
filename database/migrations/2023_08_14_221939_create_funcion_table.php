@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ClasifAccion', function (Blueprint $table) {
-            $table->id('ClasifAccionId');
-            $table->String('ClasifAccionNombre');
-            $table->text('ClasifAccionDescrip');
-            $table->text('ClasifAccionComent');
+        Schema::create('FuncionEmpleado', function (Blueprint $table) {
+            $table->id('FuncionId');
+            $table->string('UserId');
+            $table->string('FuncionDescr');
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('_clasif_accion');
+        Schema::dropIfExists('FuncionEmpleado');
     }
 };

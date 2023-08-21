@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('TipoCurso', function (Blueprint $table) {
             $table->id('TpCursoId');
-            $table->String('TpCursoSiglas');
             $table->String('TpCursoNombre');
-            $table->String('TpCursoDesc');
-            $table->String('TpCursoComen');
+            $table->text('TpCursoDesc');
+            $table->text('TpCursoComen');
             $table->timestamps();
         });
     }

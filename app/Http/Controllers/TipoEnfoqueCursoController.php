@@ -32,7 +32,6 @@ class TipoEnfoqueCursoController extends Controller
         $tpenfoque = new TipoEnfoqueCurso();
 
 
-        $tpenfoque->TpEnfoqueCursoSiglas = $request->input('TpEnfoqueCursoSiglas');
         $tpenfoque->TpEnfoqueNombre = $request->input('TpEnfoqueNombre');
         $tpenfoque->TpEnfoqueComen = $request->input('TpEnfoqueComen');
         
@@ -58,7 +57,7 @@ class TipoEnfoqueCursoController extends Controller
      */
     public function edit(String $id)
     {
-        $tpenfoque = TipoEnfoqueCurso::findOrFail($id);
+        $tpenfoque = TipoEnfoqueCurso::findOrFail($id); 
         return view('tipoenfoquecurso.editar',compact('tpenfoque'));
     }
 
@@ -67,12 +66,11 @@ class TipoEnfoqueCursoController extends Controller
      */
     public function update(Request $request,  $id)
     {
-        $tpenfoque= TipoEnfoqueCurso::findOrFail($id);
+        $tpenfoque= TipoEnfoqueCurso::findOrFail($id); 
        
        
        
 
-        $tpenfoque->TpEnfoqueCursoSiglas = $request->input('TpEnfoqueCursoSiglas');
         $tpenfoque->TpEnfoqueNombre = $request->input('TpEnfoqueNombre');
         $tpenfoque->TpEnfoqueComen = $request->input('TpEnfoqueComen');
         

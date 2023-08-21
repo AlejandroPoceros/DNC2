@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClasificacionAccionController;
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\FuncionEmpleadoController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TipoCursoController;
@@ -31,11 +32,12 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-///////
+/////// rutas 
 Route::resource('ClasifAccion', ClasificacionAccionController::class);
 Route::resource('TipoEnfoqueCurso', TipoEnfoqueCursoController::class);
 Route::resource('Cursos', CursoController::class);
 Route::resource('TipoCurso',TipoCursoController::class);
+Route::resource('FuncionEmpleado', FuncionEmpleadoController::class);
 
 
 

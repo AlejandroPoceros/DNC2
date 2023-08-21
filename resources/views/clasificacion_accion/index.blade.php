@@ -5,8 +5,9 @@
         </br>
              
         </h2>
-        <a style="border-block-color: black" href="{{ route('dashboard') }}" class="btn btn-primary">Regresar</a>
-    </x-slot>
+        <a style="border-block-color: black" href="{{ route('dashboard') }}" class="btn btn-primary">
+            <button class="  rounded-full bg-gray-500 text-white px-4 py-2">Regresar</button>
+            </a>    </x-slot>
     
 
     <div class="py-12" >
@@ -18,12 +19,11 @@
                     <table class="border">
                         <thead>
                         <tr class="border">
-                            <td class="border px-4 py-2">clasificación id</td>
-                            <td class="border px-4 py-2">clave clasificacion</td>
-                            <td class="border px-4 py-2">nombre de la acción</td>
-                            <td class="border px-4 py-2">descripción</td>
-                            <td class="border px-4 py-2">comentario</td>
-                            <td class="border px-4 py-2">fecha de creacion</td>
+                            <td class="border px-4 py-2">Nombre de la acción</td>
+                            <td class="border px-4 py-2">Descripción</td>
+                            <td class="border px-4 py-2">Comentario</td>
+                            <td class="border px-4 py-2">Fecha de creacion</td>
+                            <td class="border px-4 py-2">Ultima actualización</td>
                             <td class="border px-4 py-2">
                                 <a href="{{ route('ClasifAccion.create') }}" dir="rlt" class="flex-1">
                                     <button class="w-full rounded-full bg-green-500 text-white px-4 py-2">Crear</button>
@@ -34,12 +34,11 @@
                             <tbody>
                             @foreach ($Clasificacion as $clasificacion)
                                  <tr>
-                                    <td  class="border px-4 py-2">{{$clasificacion->ClasifAccionId}}</td>
-                                    <td  class="border px-4 py-2">{{$clasificacion->ClasifAccionSiglas}}</td>
                                     <td  class="border px-4 py-2">{{$clasificacion->ClasifAccionNombre}}</td>
                                     <td  class="border px-4 py-2">{{$clasificacion->ClasifAccionDescrip}}</td>
                                     <td  class="border px-4 py-2">{{$clasificacion->ClasifAccionComent}}</td>
                                     <td  class="border px-4 py-2">{{$clasificacion->created_at}}</td>
+                                    <td  class="border px-4 py-2">{{$clasificacion->updated_at}}</td>
                                    
                                     <td class="border px-4 py-2 flex space-x-2">
                                         <a href="{{ route('ClasifAccion.edit', [$clasificacion->ClasifAccionId]) }}" dir="rlt" class="flex-1">

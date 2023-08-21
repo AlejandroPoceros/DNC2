@@ -31,7 +31,6 @@ class ClasificacionAccionController extends Controller
     public function store(Request $request)
     {
         $clasificacion = new ClasifAccion();
-       $clasificacion->ClasifAccionSiglas = $request->input('ClasifAccionSiglas');
        $clasificacion->ClasifAccionNombre = $request->input('ClasifAccionNombre');
        $clasificacion->ClasifAccionDescrip = $request->input('ClasifAccionDescrip');
        $clasificacion->ClasifAccionComent = $request->input('ClasifAccionComent');
@@ -68,10 +67,14 @@ class ClasificacionAccionController extends Controller
     {
         $clasificacion = ClasifAccion::findOrFail($id);
 
-       $clasificacion->ClasifAccionSiglas = $request->input('ClasifAccionSiglas');
+
+        
+        $clasificacion->ClasifAccionNombre = $request->input('ClasifAccionNombre');
+        $clasificacion->ClasifAccionDescrip = $request->input('ClasifAccionDescrip');
+        $clasificacion->ClasifAccionComent = $request->input('ClasifAccionComent');
         
         if ($clasificacion->save()) {
-            return redirect()->route('Cursos.index')->with('success', '¡campo editado correctamente!');
+            return redirect()->route('ClasifAccion.index')->with('success', '¡campo editado correctamente!');
         } else {
             return redirect()->route('#')->with('error', 'Error al crear la partida presupuestal.');
         }

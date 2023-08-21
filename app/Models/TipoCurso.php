@@ -17,7 +17,5 @@ class TipoCurso extends Model
         'TpCursoNombre',
         'TpCursoDesc',
         'TpCursoComen',
-        'TpCursoSiglas',
-
     ];
 }

@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ClasifAccion;
 use App\Models\curso;
+
+use App\Models\TipoCurso;
+use App\Models\TipoEnfoqueCurso;
 use Illuminate\Http\Request;
 
 class CursoController extends Controller
@@ -13,6 +17,7 @@ class CursoController extends Controller
     public function index()
     {
         $cursos=curso::get();
+
         return view('cursos.index',compact('cursos'));
     }
 
@@ -21,8 +26,11 @@ class CursoController extends Controller
      */
     public function create()
     {
+        $enfoques=TipoEnfoqueCurso::get();
+        $tipocursos=TipoCurso::get();
         $cursos = curso::all();
-        return view('cursos.crear');
+        $claveacciones=ClasifAccion::get();
+        return view('cursos.crear',compact('enfoques','tipocursos','claveacciones'));
     }
 
     /**
@@ -40,7 +48,7 @@ class CursoController extends Controller
         $cursos->CursoVigenciaFin = $request->input('CursoVigenciaFin');
         $cursos->CursoNombre = $request->input('CursoNombre');
         $cursos->CursoDescr = $request->input('CursoDescr');
-        $cursos->TipoEnfoqueId = $request->input('TipoEnfoqueId');
+        $cursos->TipoEnfoqueId = $request->input('tipoenfoque');
         $cursos->TipoCursoId = $request->input('TipoCursoId');
         $cursos->ClasifAcionId = $request->input('ClasifAcionId');
         $cursos->CursoObjetivo = $request->input('CursoObjetivo');

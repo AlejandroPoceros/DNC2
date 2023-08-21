@@ -16,7 +16,7 @@ class TipoEnfoqueCurso extends Model
     protected $fillable =[
         'TpEnfoqueNombre',
         'TpEnfoqueComen',
-        'TpEnfoqueCursoSiglas',
+       
 
 
     ];

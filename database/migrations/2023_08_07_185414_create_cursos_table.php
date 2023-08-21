@@ -13,18 +13,15 @@ return new class extends Migration
     {
         Schema::create('cursos', function (Blueprint $table) {
             $table->id('CursoId');
-            $table->String('CursoSiglas');
             $table->String('CursoNombre');
-            $table->date('CursoVigenciaIni');
-            $table->date('CursoVigenciaFin');
             $table->String('CursoDescr');
             $table->enum('CursoSeleccionado',['si','no']);
-            $table->String('CursoComentario');
-            $table->String('CursoObjetivo');
+            $table->text('CursoComentario');
+            $table->text('CursoObjetivo');
             $table->String('ClasifAcionId');
             $table->String('TipoCursoId');
             $table->String('TipoEnfoqueId');
-            $table->String('CursoTemario');
+            $table->text('CursoTemario');
             $table->timestamps();
 
     

@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('TipoEnfoqueCurso', function (Blueprint $table) {
             $table->id('TpEnfoqueId');
-            $table->String('TpEnfoqueCursoSiglas');
             $table->String('TpEnfoqueNombre');
-            $table->String('TpEnfoqueComen');
+            $table->text('TpEnfoqueComen');
             $table->timestamps();
         });
     }

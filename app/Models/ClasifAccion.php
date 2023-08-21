@@ -18,7 +18,6 @@ class ClasifAccion extends Model
         'ClasifAccionNombre',
         'ClasifAccionDescrip',
         'ClasifAccionComent',
-        'ClasifAccionSiglas',
 
     ];
 

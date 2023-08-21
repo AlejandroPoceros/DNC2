@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
 use Laravel\Socialite\Facades\Socialite;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth; // Agrega esta línea para importar la clase Auth
 
 class LoginController extends Controller
 {
@@ -14,9 +16,21 @@ class LoginController extends Controller
     }
 
 public function callback (){
-    dd('accediste');
+   dd('accediste');
    //return redirect()->route('dashboard');
   // return view('dashboard');
+
+  // return redirect()->route('dashboard');
+    
+  //return redirect()->intended('dashboard');
+
+
+
+
+
+
+
+
 
 }
 

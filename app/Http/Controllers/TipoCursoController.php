@@ -35,7 +35,6 @@ class TipoCursoController extends Controller
         $tpcurso = new TipoCurso();
 
 
-        $tpcurso->TpCursoSiglas = $request->input('TpCursoSiglas');
         $tpcurso->TpCursoNombre = $request->input('TpCursoNombre');
         $tpcurso->TpCursoDesc = $request->input('TpCursoDesc');
         $tpcurso->TpCursoComen = $request->input('TpCursoComen');
@@ -76,7 +75,6 @@ class TipoCursoController extends Controller
        
        
 
-        $tpcurso->TpCursoSiglas = $request->input('TpCursoSiglas');
         $tpcurso->TpCursoNombre = $request->input('TpCursoNombre');
         $tpcurso->TpCursoDesc = $request->input('TpCursoDesc');
         $tpcurso->TpCursoComen = $request->input('TpCursoComen');
