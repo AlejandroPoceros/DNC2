@@ -15,7 +15,7 @@ class CursosSeeder extends Seeder
     {
         // DB::table('cursos')->insert([
         //   [
-        //    'CursoSiglas' =>'abc'
+        //    'CursoSiglas' =>'abcd'
         //  , 'CursoNombre' =>'nombre'
         //   , 'CursoVigenciaIni' => now()
         //   , 'CursoVigenciaFin' =>now()
