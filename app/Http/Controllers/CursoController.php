@@ -103,7 +103,7 @@ class CursoController extends Controller
         if ($cursos->save()) {
             return redirect()->route('Cursos.index')->with('success', '¡campo editado correctamente!');
         } else {
-            return redirect()->route('#')->with('error', 'Error al crear la partida presupuestal.');
+            return redirect()->route('#')->with('error', 'Error al crear.');
         }
 
     }
