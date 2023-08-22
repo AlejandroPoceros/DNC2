@@ -166,7 +166,7 @@
         To: "opacity-100"
       Leaving: "ease-in duration-200"
         From: "opacity-100"
-        To: "opacity-0"
+        To: "opacity-0000000"      
     -->
     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
   
