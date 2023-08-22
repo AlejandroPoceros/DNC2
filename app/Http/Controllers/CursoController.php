@@ -17,6 +17,7 @@ class CursoController extends Controller
     public function index()
     {
         $cursos=curso::get();
+        //dd($cursos);
 
         return view('cursos.index',compact('cursos'));
     }

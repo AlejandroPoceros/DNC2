@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('cursos', function (Blueprint $table) {
             $table->id('CursoId');
             $table->String('CursoNombre');
-            $table->String('CursoDescr');
+            $table->text('CursoDescr');
             $table->enum('CursoSeleccionado',['si','no']);
             $table->text('CursoComentario');
             $table->text('CursoObjetivo');
