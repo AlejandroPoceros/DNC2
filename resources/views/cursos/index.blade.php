@@ -40,6 +40,9 @@
                           <thead>
                           <tbody>
                               @foreach ($cursos as $curso)
+                              {{-- @foreach($enfoques as $enfoque)
+                              @foreach($tipocursos as $tipocurso)
+                              @foreach($clasificaciones as $clasificacion) --}}
                                   <tr>
                                       <td class="border px-4 py-2">{{ $curso->CursoNombre }}</td>
                                       <td class="border px-4 py-2">{{ $curso->TipoEnfoqueId }}</td>
@@ -52,7 +55,10 @@
                                           <button id="openModalButton" data-target="#modal"
                                               class="w-full rounded-full bg-gray-500 text-white px-4 py-2"
                                               data-curso-id="{{ $curso->CursoId}}" data-curso-dec="{{ $curso->CursoDescr}}"
-                                              curso-nombre="{{$curso->CursoNombre}}">
+                                              curso-nombre="{{$curso->CursoNombre}}" curso-objetivo="{{$curso->CursoObjetivo}}"
+                                              curso-temario="{{$curso->CursoTemario}}" curso-comentarios="{{$curso->CursoComentario}}"
+                                              curso-actualizacion="{{$curso->updated_at}}" curso-creacion="{{$curso->created_at}}"
+                                               >
                                               Detalle
                                           </button>
 
@@ -77,6 +83,7 @@
                                       </td>
                                   </tr>
                               @endforeach
+                              
 
                       <tbody>
                   </table>
@@ -108,7 +115,7 @@
                                               <hr />
                                               <div class="mt-2  overflow-y-auto">
                                                   <p class="text-sm text-gray-800"> <b
-                                                          style="font: italic">Descripción de:</b>
+                                                          style="font: italic">Descripción: </b>
                                                      
                                                       <h1  id="modal-content"></h1>
 
@@ -150,14 +157,38 @@
 
                                   openModalButtons.forEach(button => {
                                       button.addEventListener('click', function() {
-                                          const cursoId = button.getAttribute('data-curso-id');
-                                          const cursoNombre = button.getAttribute('curso-nombre');
+                                          var cursoId = button.getAttribute('data-curso-id');
+                                          var cursoNombre = button.getAttribute('curso-nombre');
                                           var descripcion = button.getAttribute('data-curso-dec'); 
+                                          var objetivo = button.getAttribute('curso-objetivo'); 
+                                          var temario = button.getAttribute('curso-temario'); 
+                                          var comentarios = button.getAttribute('curso-comentarios'); 
+                                          var creacion = button.getAttribute('curso-creacion'); 
+                                          var actualizacion = button.getAttribute('curso-actualizacion'); 
+                                         
                                           
                                           const modalTitle = modal.querySelector('#modal-title');
                                           const modalContent = modal.querySelector('#modal-content');
                                           modalTitle.textContent = 'DETALLE: ' + cursoNombre;
-                                          modalContent.textContent= 'descripcion'+ descripcion;
+                                          modalContent.innerHTML = `
+                                            <p>${descripcion}</p>
+                                            
+                                            <p class="text-sm text-gray-800"><b style="font: italic">Objetivo:</b></p>
+                                            <p>${objetivo}</p>
+                                            <p class="text-sm text-gray-800"><b style="font: italic">Temario:</b></p>
+                                            <p>${temario}</p>
+                                            <p class="text-sm text-gray-800"><b style="font: italic">Comentarios:</b></p>
+                                            <p>${comentarios}</p>
+                                            <p class="text-sm text-gray-800"><b style="font: italic">Fecha de creación:</b></p>
+                                            <p>${creacion}</p>
+                                            <p class="text-sm text-gray-800"><b style="font: italic">Ultima actualización:</b></p>
+                                            <p>${actualizacion}</p>
+                                            
+
+                                            `;
+
+    
+                                          
                                         
                                           // Update other modal content elements with cursoDetails...
 

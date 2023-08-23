@@ -16,6 +16,9 @@ class CursoController extends Controller
      */
     public function index()
     {
+       
+
+
         $cursos=curso::get();
         //dd($cursos);
 
