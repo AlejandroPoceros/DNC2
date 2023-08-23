@@ -9,7 +9,7 @@ class ClasifAccion extends Model
 {
     use HasFactory;
 
-    protected $table ='ClasifAccion';
+    protected $table ='ClasifAccion';  
     protected $primaryKey='ClasifAccionId';
     public $incrementing =true;
     

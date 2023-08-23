@@ -51,7 +51,8 @@
 
                                           <button id="openModalButton" data-target="#modal"
                                               class="w-full rounded-full bg-gray-500 text-white px-4 py-2"
-                                              data-curso-id="{{ $curso->CursoId}}" data-curso-dec="{{ $curso->CursoDescr}}">
+                                              data-curso-id="{{ $curso->CursoId}}" data-curso-dec="{{ $curso->CursoDescr}}"
+                                              curso-nombre="{{$curso->CursoNombre}}">
                                               Detalle
                                           </button>
 
@@ -150,11 +151,12 @@
                                   openModalButtons.forEach(button => {
                                       button.addEventListener('click', function() {
                                           const cursoId = button.getAttribute('data-curso-id');
+                                          const cursoNombre = button.getAttribute('curso-nombre');
                                           var descripcion = button.getAttribute('data-curso-dec'); 
                                           
                                           const modalTitle = modal.querySelector('#modal-title');
                                           const modalContent = modal.querySelector('#modal-content');
-                                          modalTitle.textContent = 'DETALLE: ' + cursoId;
+                                          modalTitle.textContent = 'DETALLE: ' + cursoNombre;
                                           modalContent.textContent= 'descripcion'+ descripcion;
                                         
                                           // Update other modal content elements with cursoDetails...

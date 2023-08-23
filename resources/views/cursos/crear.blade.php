@@ -61,7 +61,7 @@
                         <div class="md:w-2/3">
                             <select name="tipoenfoque" id="tipoenfoque" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500">
                               @foreach ($enfoques as $enfoque)
-                              <option value="{{$enfoque->TpEnfoqueId}}">{{$enfoque->TpEnfoqueCursoSiglas}}</option>
+                              <option value="{{$enfoque->TpEnfoqueId}}">{{$enfoque->TpEnfoqueNombre}}</option>
                               @endforeach
                             </select>
                         </div>
@@ -77,7 +77,7 @@
                         <div class="md:w-2/3">
                           <select name="TipoCursoId" id="TipoCursoId" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500">
                             @foreach ($tipocursos as $tipocurso)
-                            <option value="{{$tipocurso->TpCursoId}}">{{$tipocurso->TpCursoSiglas}}</option>
+                            <option value="{{$tipocurso->TpCursoId}}">{{$tipocurso->TpCursoNombre}}</option>
                             @endforeach
                           </select>                       
                          </div>
@@ -91,7 +91,7 @@
                         <div class="md:w-2/3">
                           <select name="ClasifAcionId" id="ClasifAcionId" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500">
                             @foreach ($claveacciones as $claveaccion)
-                            <option value="{{$claveaccion->ClasifAccionId}}">{{$claveaccion->ClasifAccionSiglas}}</option>
+                            <option value="{{$claveaccion->ClasifAccionId}}">{{$claveaccion->ClasifAccionNombre}}</option>
                             @endforeach
                           </select>                           
                          </div>

@@ -18,7 +18,7 @@ class UsuariosTableSeeder extends Seeder
         $usuario= User::create([
         'name'=>'admin'
         ,'email'=>'admin@gmail.com'
-        ,'password'=>'1234456768'
+        ,'password'=>'12345678'
         ,'email_verified_at'=>null
         ,'remember_token'=>null
         ,'created_at'=>$ahora
