@@ -16,16 +16,9 @@
             
                 <tr>
                     <td><p>email   </p></td>
-                    <td class="px-8">{{auth()->user()->id}}</td>
+                    <td class="px-8">{{auth()->user()->email}}</td>
                 </tr>
-                <tr>
-                    <td>puesto</td>
-                    <td class="px-8">{{auth()->user()->id}}</td>
-                </tr>
-                <tr >
-                    <td><p>departamento</p></td>
-                    <td class="px-8">{{auth()->user()->id}}</td>
-                </tr>
+                
                     
                 <tbody >
         </table>

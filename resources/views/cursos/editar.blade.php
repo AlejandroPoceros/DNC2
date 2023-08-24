@@ -47,8 +47,9 @@
                             </label>
                           </div>
                           <div class="md:w-2/3">
-                            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="CursoDescr" name="CursoDescr" type="text" value="{{$cursos->CursoDescr}}">
-                          </div>
+                            <textarea class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="CursoDescr" name="CursoDescr" rows="4" maxlength="200">{{$cursos->CursoDescr}}</textarea>
+                        </div>
+                        
                         </div>
                         <div class="md:flex md:items-center mb-6">
                           <div class="md:w-1/3">
@@ -57,7 +58,11 @@
                             </label>
                           </div>
                           <div class="md:w-2/3">
-                            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="TipoEnfoqueId" name="TipoEnfoqueId" type="text" value="{{$cursos->TipoEnfoqueId}}" >
+                            <select name="TipoEnfoqueId" id="TpEnfoqueId" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500">
+                              @foreach ($enfoques as $enfoque)
+                              <option value="{{$enfoque->TpEnfoqueNombre}}">{{$enfoque->TpEnfoqueNombre}}</option>
+                              @endforeach
+                            </select>                          
                           </div>
                         </div>
                         <div class="md:flex md:items-center mb-6">
@@ -67,8 +72,11 @@
                             </label>
                           </div>
                           <div class="md:w-2/3">
-                            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="TipoCursoId" name="TipoCursoId" type="text" value="{{$cursos->TipoCursoId}}">
-                          </div>
+                            <select name="TipoCursoId" id="TipoCursoId" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500">
+                              @foreach ($tipocursos as $tipocurso)
+                              <option value="{{$tipocurso->TpCursoNombre}}">{{$tipocurso->TpCursoNombre}}</option>
+                              @endforeach
+                            </select>                            </div>
                         </div>
                         <div class="md:flex md:items-center mb-6">
                           <div class="md:w-1/3">
@@ -77,8 +85,11 @@
                             </label>
                           </div>
                           <div class="md:w-2/3">
-                            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="ClasifAcionId" name="ClasifAcionId" type="text"  value="{{$cursos->ClasifAcionId}}">
-                          </div>
+                            <select name="ClasifAcionId" id="ClasifAcionId" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500">
+                              @foreach ($claveacciones as $claveaccion)
+                              <option value="{{$claveaccion->ClasifAccionId}}">{{$claveaccion->ClasifAccionNombre}}</option>
+                              @endforeach
+                            </select>                            </div>
                         </div>
                         <div class="md:flex md:items-center mb-6">
                           <div class="md:w-1/3">
@@ -87,7 +98,7 @@
                             </label>
                           </div>
                           <div class="md:w-2/3">
-                            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="CursoObjetivo" name="CursoObjetivo" type="text" value="{{$cursos->CursoObjetivo}}" >
+                            <textarea class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="CursoObjetivo" name="CursoObjetivo" type="text" rows="4" maxlength="200">{{$cursos->CursoObjetivo}} </textarea>
                           </div>
                         </div>
                         <div class="md:flex md:items-center mb-6">
@@ -97,7 +108,7 @@
                             </label>
                           </div>
                           <div class="md:w-2/3">
-                            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="CursoTemario" name="CursoTemario" type="text" value="{{$cursos->CursoTemario}}">
+                            <textarea class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="CursoTemario" name="CursoTemario" type="text" rows="4" maxlength="200">{{$cursos->CursoTemario}} </textarea>
                           </div>
                         </div>
                         <div class="md:flex md:items-center mb-6">
@@ -107,7 +118,7 @@
                             </label>
                           </div>
                           <div class="md:w-2/3">
-                            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="CursoComentario" name="CursoComentario" type="text" value="{{$cursos->CursoComentario}}" >
+                            <textarea class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="CursoComentario" name="CursoComentario" type="text" rows="4" maxlength="200"> {{$cursos->CursoComentario}}</textarea>
                           </div>
                         </div>
                         

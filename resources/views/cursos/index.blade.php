@@ -17,17 +17,18 @@
 
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
-          <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-              <div class="p-6 text-gray-900">
+          <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mx-auto">
+              <div class=" overflow-x-auto p-6 text-gray-900">
                   @section('css')
                       <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
                   @endsection
-                  <table id="cursos" class="border ">
+                  <table id="cursos" class="overflow-x-auto w-full ">
                       <thead>
                           <tr class="border">
                               <td class="border px-4 py-2">Nombre del curso</td>
-                              <td class="border px-4 py-2">Clave del enfoque</td>
-                              <td class="border px-4 py-2">Clave del tipo de curso</td>
+                              <td class="border px-4 py-2">Nombre del enfoque</td>
+                              <td class="border px-4 py-2">Nombre del tipo de Curso</td>
+                              <td class="border px-4 py-2">Nombre de la accion</td>
                               <td class="border px-4 py-2">Fecha de creación</td>
                               <td class="border px-4 py-2">Ultima Actualización</td>
                               <td class="border px-4 py-2">
@@ -45,8 +46,9 @@
                               @foreach($clasificaciones as $clasificacion) --}}
                                   <tr>
                                       <td class="border px-4 py-2">{{ $curso->CursoNombre }}</td>
-                                      <td class="border px-4 py-2">{{ $curso->TipoEnfoqueId }}</td>
-                                      <td class="border px-4 py-2">{{ $curso->TipoCursoId }}</td>
+                                      <td class="border px-4 py-2">{{ $curso->tipoenfoquenombre}}</td>
+                                      <td class="border px-4 py-2">{{ $curso->tipocursonombre }}</td>
+                                      <td class="border px-4 py-2">{{ $curso->clasifaccionnombre }}</td>
                                       <td class="border px-4 py-2">{{ $curso->created_at }}</td>
                                       <td class="border px-4 py-2">{{ $curso->updated_at }}</td>
                                       <td class="border px-4 py-2 flex space-x-2">

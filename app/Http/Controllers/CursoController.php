@@ -8,6 +8,7 @@ use App\Models\curso;
 use App\Models\TipoCurso;
 use App\Models\TipoEnfoqueCurso;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CursoController extends Controller
 {
@@ -19,9 +20,28 @@ class CursoController extends Controller
        
 
 
-        $cursos=curso::get();
+      //  $cursos=curso::get();
         //dd($cursos);
 
+//query
+
+$cursos = DB::table('cursos as c')
+    ->select(
+        'c.*',
+        'te.TpEnfoqueId as tipo enfoque',
+        'c.TipoEnfoqueId as tipo enfoque curso',
+        'te.TpEnfoqueNombre as tipoenfoquenombre',
+        'tc.TpCursoId as tipocursoid',
+        'tc.TpCursoNombre as tipocursonombre',
+        'cla.ClasifAccionNombre as clasifaccionnombre',
+        'cla.ClasifAccionId as clasifaccionid'
+    )
+    ->join('tipoenfoquecurso as te', 'te.TpEnfoqueId', '=', 'c.TipoEnfoqueId')
+    ->join('tipocurso as tc', 'tc.TpCursoId', '=', 'c.TipoCursoId')
+    ->join('clasifaccion as cla', 'cla.ClasifAccionId', '=', 'c.ClasifAcionId')
+    ->get();
+
+//dd($cursos);
         return view('cursos.index',compact('cursos'));
     }
 
@@ -34,6 +54,10 @@ class CursoController extends Controller
         $tipocursos=TipoCurso::get();
         $cursos = curso::all();
         $claveacciones=ClasifAccion::get();
+
+
+
+
         return view('cursos.crear',compact('enfoques','tipocursos','claveacciones'));
     }
 
@@ -77,9 +101,12 @@ class CursoController extends Controller
      */
     public function edit($id)
     {
-       
+        $enfoques=TipoEnfoqueCurso::get();
+        $tipocursos=TipoCurso::get();
+        $claveacciones=ClasifAccion::get();
+
         $cursos = curso::findOrFail($id);
-        return view('cursos.editar',compact('cursos'));
+        return view('cursos.editar',compact('cursos','enfoques','tipocursos','claveacciones'));
     }
 
     /**
